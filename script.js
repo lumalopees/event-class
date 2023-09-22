@@ -8,5 +8,7 @@ window.onload = () => {
 
   const containerPlayers = document.getElementsByClassName('car-section')
 
-  containerPlayers.addEventListener()
+  containerPlayers.addEventListener('click', (event) => {
+    console.log(event.target);
+  })
 }
