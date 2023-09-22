@@ -9,6 +9,10 @@ window.onload = () => {
   const containerPlayers = document.getElementsByClassName('car-section')[0]
 
   containerPlayers.addEventListener('click', (event) => {
+    const selected = document.querySelector('.selected');
+    if (selected) {
+      selected.classList.remove('selected');
+    }
     event.target.classList.add('selected')
   });
 };
