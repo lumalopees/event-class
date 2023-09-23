@@ -6,7 +6,10 @@ window.onload = () => {
   const player2 = document.getElementById('player2')
   const winnerSong = document.getElementById('audioWinner')
 
-  startBtn.addEventListener
+  startBtn.addEventListener('click', () => {
+    player1 = (parseInt(player1.style.marginLeft) + 200) + 'px';
+    player2 = (parseInt(player2.style.marginLeft) + 200) + 'px';
+  })
 
   const containerPlayers = document.getElementsByClassName('car-section')[0]
   containerPlayers.addEventListener('click', (event) => {
