@@ -6,8 +6,9 @@ window.onload = () => {
   const player2 = document.getElementById('player2')
   const winnerSong = document.getElementById('audioWinner')
 
-  const containerPlayers = document.getElementsByClassName('car-section')[0]
+  startBtn.addEventListener
 
+  const containerPlayers = document.getElementsByClassName('car-section')[0]
   containerPlayers.addEventListener('click', (event) => {
     const selected = document.querySelector('.selected');
     if (selected) {
