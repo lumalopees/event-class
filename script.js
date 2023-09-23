@@ -15,4 +15,9 @@ window.onload = () => {
     }
     event.target.classList.add('selected')
   });
+
+  const players = document.querySelectorAll('.playerImages');
+  for (let player of players) {
+    
+  }
 };
