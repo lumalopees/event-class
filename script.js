@@ -16,8 +16,11 @@ window.onload = () => {
     event.target.classList.add('selected')
   });
 
-  const players = document.querySelectorAll('.playerImages');
+  const players = document.querySelectorAll('.playersImages');
   for (let player of players) {
-    
+    player.addEventListener('click', (event) => {
+      const selected = document.querySelector('.selected');
+      selected.style.backgroundImage = `url(${event.target.src})`
+    })
   }
 };
