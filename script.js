@@ -18,6 +18,15 @@ window.onload = () => {
   startBtn.addEventListener('click', () => {
     player1.style.marginLeft = (parseInt(player1.style.marginLeft)  + randomNumber()) + 'px';
     player2.style.marginLeft = (parseInt(player2.style.marginLeft)  + randomNumber()) + 'px';
+
+    const player1Win = parseInt(player1.style.marginLeft) > window.innerWidth;
+    const player2Win = parseInt(player2.style.marginLeft) > window.innerWidth;
+
+    if (player1Win) {
+
+    } else if (player2Win) {
+      
+    }
   })
 
   const containerPlayers = document.getElementsByClassName('car-section')[0]
