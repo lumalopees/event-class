@@ -23,9 +23,13 @@ window.onload = () => {
     const player2Win = parseInt(player2.style.marginLeft) > window.innerWidth;
 
     if (player1Win) {
-
+      alert('PLAYER 1 VENCEU')
+      winnerSong.play();
+      winnerSong.volume = 0.2;
     } else if (player2Win) {
-      
+      alert('PLAYER 2 VENCEU')
+      winnerSong.play();
+      winnerSong.volume = 0.2;
     }
   })
 
