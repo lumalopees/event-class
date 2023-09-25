@@ -2,6 +2,17 @@ function randomNumber () {
   return Math.random() * 200;
 }
 
+const resetGame = () => {
+  const player1 = document.getElementById('player1')
+  const player2 = document.getElementById('player2')
+
+  player1.style.marginLeft = 0;
+  player2.style.marginLeft = 0;
+
+  player1.style.backgroundImage = `url(./files/selectPlayer.png)`
+  player2.style.backgroundImage = `url(./files/selectPlayer.png)`
+}
+
 window.onload = () => {
   // captura dos elementos necessários
   
@@ -23,15 +34,19 @@ window.onload = () => {
     const player2Win = parseInt(player2.style.marginLeft) > window.innerWidth;
 
     if (player1Win) {
+      winnerSong.play();
+      winnerSong.volume = 0.2;
       alert('PLAYER 1 VENCEU')
-      winnerSong.play();
-      winnerSong.volume = 0.2;
+      resetGame();
     } else if (player2Win) {
-      alert('PLAYER 2 VENCEU')
       winnerSong.play();
       winnerSong.volume = 0.2;
+      alert('PLAYER 2 VENCEU')
+      resetGame();
     }
   })
+
+  resetBtn.addEventListener('click', resetGame);
 
   const containerPlayers = document.getElementsByClassName('car-section')[0]
   containerPlayers.addEventListener('click', (event) => {
