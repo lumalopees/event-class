@@ -15,12 +15,12 @@ const resetGame = () => {
 
 const scorePlayer1 = () => {
   const upScore = document.getElementById('p1Score')
-  upScore.innerText = upScore.innerText + 1;
+  upScore.innerText = +upScore.innerText + 1;
 }
 
 const scorePlayer2 = () => {
-  
-}
+  const upScore = document.getElementById('p2Score')
+  upScore.innerText = +upScore.innerText + 1;
 
 window.onload = () => {
   // captura dos elementos necessários
@@ -43,17 +43,19 @@ window.onload = () => {
     const player2Win = parseInt(player2.style.marginLeft) > window.innerWidth;
 
     if (player1Win) {
-      winnerSong.play();
-      winnerSong.volume = 0.2;
       alert('PLAYER 1 VENCEU')
-      resetGame();
-      scorePlayer1();
-    } else if (player2Win) {
       winnerSong.play();
       winnerSong.volume = 0.2;
-      alert('PLAYER 2 VENCEU')
+
+      scorePlayer1();
       resetGame();
+    } else if (player2Win) {
+      alert('PLAYER 2 VENCEU')
+      winnerSong.play();
+      winnerSong.volume = 0.2;
+
       scorePlayer2();
+      resetGame();
     }
   })
 
