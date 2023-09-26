@@ -13,6 +13,15 @@ const resetGame = () => {
   player2.style.backgroundImage = `url(./files/selectPlayer.png)`
 }
 
+const scorePlayer1 = () => {
+  const upScore = document.getElementById('p1Score')
+  upScore.innerText = upScore.innerText + 1;
+}
+
+const scorePlayer2 = () => {
+  
+}
+
 window.onload = () => {
   // captura dos elementos necessários
   
@@ -38,11 +47,13 @@ window.onload = () => {
       winnerSong.volume = 0.2;
       alert('PLAYER 1 VENCEU')
       resetGame();
+      scorePlayer1();
     } else if (player2Win) {
       winnerSong.play();
       winnerSong.volume = 0.2;
       alert('PLAYER 2 VENCEU')
       resetGame();
+      scorePlayer2();
     }
   })
 
