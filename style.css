@@ -91,3 +91,38 @@ button {
 .small {
   font-size: 20px;
 }
+
+.scoreSection {
+  text-align: center;
+}
+
+.scorePlayer {
+  display: flex;
+  justify-content: center;
+  font-family: 'Luckiest Guy', cursive;
+  font-size: 20px;
+  margin: 15px;
+  color: white;
+  text-shadow: black 2px 2px 5px;
+}
+
+.scorePlayer p {
+  margin: 5px;
+}
+
+.scores-players {
+  display: flex;
+  justify-content: center;
+}
+
+h2 {
+  font-family: 'Luckiest Guy', cursive;
+  font-size: 20px;
+  margin-top: 20px;
+  color: white;
+  text-shadow: black 2px 2px 5px;
+}
+
+.btn-reset-local-storage {
+  background-color: pink;
+}
