@@ -14,13 +14,19 @@ const resetGame = () => {
 }
 
 const scorePlayer1 = () => {
-  const upScore = document.getElementById('p1Score')
-  upScore.innerText = +upScore.innerText + 1;
+  const upScore1 = document.getElementById('p1Score')
+  upScore1.innerText = +upScore1.innerText + 1;
 }
 
 const scorePlayer2 = () => {
-  const upScore = document.getElementById('p2Score')
-  upScore.innerText = +upScore.innerText + 1;
+  const upScore2 = document.getElementById('p2Score')
+  upScore2.innerText = +upScore2.innerText + 1;
+}
+
+const keepStorage = () => {
+  const upScore1 = document.getElementById('p1Score')
+  const upScore2 = document.getElementById('p2Score')
+}
 
 window.onload = () => {
   // captura dos elementos necessários
@@ -48,6 +54,7 @@ window.onload = () => {
       winnerSong.volume = 0.2;
 
       scorePlayer1();
+      keepStorage();
       resetGame();
     } else if (player2Win) {
       alert('PLAYER 2 VENCEU')
@@ -55,6 +62,7 @@ window.onload = () => {
       winnerSong.volume = 0.2;
 
       scorePlayer2();
+      keepStorage();
       resetGame();
     }
   })
@@ -79,5 +87,4 @@ window.onload = () => {
         selected.classList.remove('selected');
       }
     })
-  }
-};
+  }}
