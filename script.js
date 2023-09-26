@@ -26,6 +26,8 @@ const scorePlayer2 = () => {
 const keepStorage = () => {
   const upScore1 = document.getElementById('p1Score')
   const upScore2 = document.getElementById('p2Score')
+
+  localStorage.setItem('scorep1', scorePlayer1.innerText)
 }
 
 window.onload = () => {
