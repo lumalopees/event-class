@@ -31,6 +31,11 @@ const keepStorage = () => {
   localStorage.setItem('scorep2', upScore2.innerText)
 }
 
+const showStorage = () => {
+  const localScoreP1 = localStorage.getItem('scorep1');
+  const localScoreP2 = localStorage.getItem('scorep2');
+}
+
 window.onload = () => {
   // captura dos elementos necessários
   
@@ -43,6 +48,8 @@ window.onload = () => {
   
   player1.style.marginLeft = 0;
   player2.style.marginLeft = 0;
+
+  showStorage();
   
   startBtn.addEventListener('click', () => {
     player1.style.marginLeft = (parseInt(player1.style.marginLeft)  + randomNumber()) + 'px';
