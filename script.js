@@ -38,9 +38,15 @@ const showStorage = () => {
   const upScore1 = document.getElementById('p1Score')
   const upScore2 = document.getElementById('p2Score')
 
-  const scores = JSON.parse(localStorage.getItem('scores'))
-  upScore1.innerText = scores[0];
-  upScore2.innerText = scores[1];
+  if (localStorage.getItem('scores')) {
+    const scores = JSON.parse(localStorage.getItem('scores'))
+    upScore1.innerText = scores[0];
+    upScore2.innerText = scores[1];
+  }
+}
+
+const resetLocalStorage = () => {
+  localStorage.clear();
 }
 
 window.onload = () => {
@@ -51,6 +57,7 @@ window.onload = () => {
   const player1 = document.getElementById('player1')
   const player2 = document.getElementById('player2')
   const winnerSong = document.getElementById('audioWinner')
+  const resetLS = document.getElementById('reset-local-storage')
 
   
   player1.style.marginLeft = 0;
@@ -85,6 +92,8 @@ window.onload = () => {
   })
 
   resetBtn.addEventListener('click', resetGame);
+
+  resetLS.addEventListener('click', resetLocalStorage)
 
   const containerPlayers = document.getElementsByClassName('car-section')[0]
   containerPlayers.addEventListener('click', (event) => {
