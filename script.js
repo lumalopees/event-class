@@ -39,6 +39,8 @@ const showStorage = () => {
   const upScore2 = document.getElementById('p2Score')
 
   const scores = JSON.parse(localStorage.getItem('scores'))
+  upScore1.innerText = scores[0];
+  upScore2.innerText = scores[1];
 }
 
 window.onload = () => {
