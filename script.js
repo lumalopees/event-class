@@ -27,8 +27,11 @@ const keepStorage = () => {
   const upScore1 = document.getElementById('p1Score')
   const upScore2 = document.getElementById('p2Score')
 
-  localStorage.setItem('scorep1', upScore1.innerText)
-  localStorage.setItem('scorep2', upScore2.innerText)
+const arrayScores = [];
+arrayScores.push(upScore1);
+arrayScores.push(upScore2);
+
+  localStorage.setItem('scores', arrayScores);
 }
 
 const showStorage = () => {
@@ -57,7 +60,7 @@ window.onload = () => {
   player1.style.marginLeft = 0;
   player2.style.marginLeft = 0;
 
-  showStorage();
+  // showStorage();
   
   startBtn.addEventListener('click', () => {
     player1.style.marginLeft = (parseInt(player1.style.marginLeft)  + randomNumber()) + 'px';
