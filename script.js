@@ -28,10 +28,10 @@ const keepStorage = () => {
   const upScore2 = document.getElementById('p2Score')
 
 const arrayScores = [];
-arrayScores.push(upScore1);
-arrayScores.push(upScore2);
+arrayScores.push(upScore1.innerText);
+arrayScores.push(upScore2.innerText);
 
-  localStorage.setItem('scores', arrayScores);
+  localStorage.setItem('scores', JSON.stringify(arrayScores));
 }
 
 const showStorage = () => {
