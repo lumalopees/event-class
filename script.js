@@ -38,13 +38,7 @@ const showStorage = () => {
   const upScore1 = document.getElementById('p1Score')
   const upScore2 = document.getElementById('p2Score')
 
-  if (localStorage.getItem('scorep1')) {
-    upScore1.innerText = localStorage.getItem('scorep1');
-  } 
-
-  if (localStorage.getItem('scorep2')) {
-    upScore2.innerText = localStorage.getItem('scorep2')
-  }
+  const scores = JSON.parse(localStorage.getItem('scores'))
 }
 
 window.onload = () => {
@@ -60,7 +54,7 @@ window.onload = () => {
   player1.style.marginLeft = 0;
   player2.style.marginLeft = 0;
 
-  // showStorage();
+  showStorage();
   
   startBtn.addEventListener('click', () => {
     player1.style.marginLeft = (parseInt(player1.style.marginLeft)  + randomNumber()) + 'px';
