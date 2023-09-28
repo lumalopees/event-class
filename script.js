@@ -47,6 +47,7 @@ const showStorage = () => {
 
 const resetLocalStorage = () => {
   localStorage.clear();
+  window.location.reload();
 }
 
 window.onload = () => {
