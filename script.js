@@ -32,8 +32,16 @@ const keepStorage = () => {
 }
 
 const showStorage = () => {
-  const localScoreP1 = localStorage.getItem('scorep1');
-  const localScoreP2 = localStorage.getItem('scorep2');
+  const upScore1 = document.getElementById('p1Score')
+  const upScore2 = document.getElementById('p2Score')
+
+  if (localStorage.getItem('scorep1')) {
+    upScore1.innerText = localStorage.getItem('scorep1');
+  } 
+
+  if (localStorage.getItem('scorep2')) {
+    upScore2.innerText = localStorage.getItem('scorep2')
+  }
 }
 
 window.onload = () => {
